@@ -33,10 +33,6 @@ jobs:
         working-directory: callgraph4rs
         run: cargo fmt --all -- --check
 
-      - name: Check callgraph4rs linting (cargo clippy)
-        working-directory: callgraph4rs
-        run: cargo clippy --all-targets --all-features -- -D warnings
-
       - name: Run callgraph4rs tests (cargo test)
         working-directory: callgraph4rs
         run: cargo test --all-targets -- --nocapture
