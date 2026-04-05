@@ -1,15 +1,23 @@
 #!/bin/sh
 set -e
 
+REPO="https://github.com/xizheyin/cargo-reachsec"
+TMPDIR=$(mktemp -d)
+
+echo "Cloning cargo-reachsec..."
+git clone --recurse-submodules "$REPO" "$TMPDIR/cargo-reachsec"
+
 echo "Installing reachsec..."
-cargo install reachsec
+cargo install --path "$TMPDIR/cargo-reachsec" --bin reachsec
 
 echo "Installing nightly toolchain..."
 rustup toolchain install nightly
 rustup component add rustc-dev llvm-tools-preview --toolchain nightly
 
 echo "Installing call-cg4rs..."
-cargo +nightly install call-cg4rs
+cargo +nightly install --path "$TMPDIR/cargo-reachsec/callgraph4rs" --force
+
+rm -rf "$TMPDIR"
 
 echo ""
 echo "Installation complete. Run 'reachsec check --path .' to get started."
