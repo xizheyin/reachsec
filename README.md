@@ -10,7 +10,15 @@ It combines two steps in a single `check` workflow:
 This project uses `callgraph4rs` as a git submodule for MIR-level call graph analysis.
 The submodule tracks the standalone repository at `git@github.com:xizheyin/callgraph4rs.git`.
 
-## Build
+## Quick Install
+
+```bash
+curl -sSf https://raw.githubusercontent.com/xizheyin/cargo-reachsec/main/install.sh | sh
+```
+
+This installs both `reachsec` and `call-cg4rs` (requires cargo and rustup).
+
+## Build from Source
 
 ```bash
 git clone --recurse-submodules https://github.com/xizheyin/rustsec-reachability
