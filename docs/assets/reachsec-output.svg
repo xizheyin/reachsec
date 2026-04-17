@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="980" viewBox="0 0 1200 980" role="img" aria-labelledby="title desc">
+  <title id="title">reachsec terminal output</title>
+  <desc id="desc">Terminal-style screenshot matching the current reachsec output for v_frame and RUSTSEC-2023-0017.</desc>
+  <rect width="1200" height="980" fill="#0f172a" rx="20"/>
+  <rect x="24" y="24" width="1152" height="932" rx="16" fill="#111827" stroke="#334155"/>
+  <circle cx="70" cy="60" r="10" fill="#ef4444"/>
+  <circle cx="100" cy="60" r="10" fill="#f59e0b"/>
+  <circle cx="130" cy="60" r="10" fill="#22c55e"/>
+  <text x="170" y="67" fill="#94a3b8" font-family="Menlo, Monaco, Consolas, monospace" font-size="24">reachsec check --path ./v_frame-0.3.2</text>
+
+  <text x="60" y="120" fill="#67e8f9" font-family="Menlo, Monaco, Consolas, monospace" font-size="26" font-weight="700">Found 1 advisories:</text>
+
+  <text x="60" y="178" fill="#f87171" font-family="Menlo, Monaco, Consolas, monospace" font-size="30" font-weight="700">✗ VULNERABLE RUSTSEC-2023-0017</text>
+  <text x="90" y="226" fill="#e5e7eb" font-family="Menlo, Monaco, Consolas, monospace" font-size="24"><tspan font-weight="700">Affected:</tspan><tspan fill="#94a3b8"> 4 known function(s); 15 call path(s) found</tspan></text>
+  <text x="90" y="272" fill="#e5e7eb" font-family="Menlo, Monaco, Consolas, monospace" font-size="24" font-weight="700">Affected functions:</text>
+  <text x="125" y="312" fill="#f9a8d4" font-family="Menlo, Monaco, Consolas, monospace" font-size="23">- maligned::align_first</text>
+  <text x="125" y="346" fill="#f9a8d4" font-family="Menlo, Monaco, Consolas, monospace" font-size="23">- maligned::align_first_boxed</text>
+  <text x="125" y="380" fill="#f9a8d4" font-family="Menlo, Monaco, Consolas, monospace" font-size="23">- maligned::align_first_boxed_cloned</text>
+  <text x="125" y="414" fill="#f9a8d4" font-family="Menlo, Monaco, Consolas, monospace" font-size="23">- maligned::align_first_boxed_default</text>
+
+  <text x="90" y="466" fill="#e5e7eb" font-family="Menlo, Monaco, Consolas, monospace" font-size="24" font-weight="700">Call chains:</text>
+  <text x="125" y="506" fill="#9ca3af" font-family="Menlo, Monaco, Consolas, monospace" font-size="20">→ frame::Frame::&lt;T&gt;::new_with_padding -&gt; plane::Plane::&lt;T&gt;::new</text>
+  <text x="125" y="536" fill="#9ca3af" font-family="Menlo, Monaco, Consolas, monospace" font-size="20">  -&gt; plane::PlaneData::&lt;T&gt;::new -&gt; maligned::align_first_boxed_cloned::&lt;T, maligned::A64&gt;</text>
+
+  <text x="125" y="582" fill="#9ca3af" font-family="Menlo, Monaco, Consolas, monospace" font-size="20">→ plane::PlaneData::&lt;T&gt;::new -&gt; maligned::align_first_boxed_cloned::&lt;T, maligned::A64&gt;</text>
+
+  <text x="125" y="628" fill="#9ca3af" font-family="Menlo, Monaco, Consolas, monospace" font-size="20">→ plane::Plane::&lt;T&gt;::new -&gt; plane::PlaneData::&lt;T&gt;::new</text>
+  <text x="125" y="658" fill="#9ca3af" font-family="Menlo, Monaco, Consolas, monospace" font-size="20">  -&gt; maligned::align_first_boxed_cloned::&lt;T, maligned::A64&gt;</text>
+
+  <text x="125" y="704" fill="#9ca3af" font-family="Menlo, Monaco, Consolas, monospace" font-size="20">→ plane::Plane::&lt;T&gt;::downsampled -&gt; plane::Plane::&lt;T&gt;::new</text>
+  <text x="125" y="734" fill="#9ca3af" font-family="Menlo, Monaco, Consolas, monospace" font-size="20">  -&gt; plane::PlaneData::&lt;T&gt;::new -&gt; maligned::align_first_boxed_cloned::&lt;T, maligned::A64&gt;</text>
+
+  <text x="125" y="780" fill="#9ca3af" font-family="Menlo, Monaco, Consolas, monospace" font-size="20">→ plane::Plane::&lt;T&gt;::downscale::&lt;SCALE&gt; -&gt; plane::Plane::&lt;T&gt;::new</text>
+  <text x="125" y="810" fill="#9ca3af" font-family="Menlo, Monaco, Consolas, monospace" font-size="20">  -&gt; plane::PlaneData::&lt;T&gt;::new -&gt; maligned::align_first_boxed_cloned::&lt;T, maligned::A64&gt;</text>
+
+  <text x="125" y="856" fill="#94a3b8" font-family="Menlo, Monaco, Consolas, monospace" font-size="20">... and 10 more. Re-run with --show-all-call-chains or --max-call-chains 15</text>
+  <text x="90" y="904" fill="#e5e7eb" font-family="Menlo, Monaco, Consolas, monospace" font-size="24"><tspan font-weight="700">Package:</tspan><tspan fill="#86efac"> maligned</tspan><tspan fill="#fde68a"> 0.2.1</tspan></text>
+  <text x="90" y="940" fill="#e5e7eb" font-family="Menlo, Monaco, Consolas, monospace" font-size="21"><tspan font-weight="700">Title:</tspan> `maligned::align_first` causes incorrect deallocation</text>
+</svg>
