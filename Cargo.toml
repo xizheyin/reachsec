@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "RustSec vulnerability checker with function-level reachability analysis"
-repository = "https://github.com/xizheyin/cargo-reachsec"
-homepage = "https://github.com/xizheyin/cargo-reachsec"
+repository = "https://github.com/xizheyin/reachsec"
+homepage = "https://github.com/xizheyin/reachsec"
 keywords = ["security", "vulnerability", "rustsec", "reachability", "audit"]
 categories = ["development-tools", "command-line-utilities"]
 
